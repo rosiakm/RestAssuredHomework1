@@ -16,7 +16,7 @@ public class WeatherServiceApiTest extends TestBase {
     @ParameterizedTest(name = "City {0} with id {2} has been tested")
     @CsvFileSource(resources = "/testdata.csv")
     @Tag("weather")
-    //@Execution(ExecutionMode.CONCURRENT)
+    @Execution(ExecutionMode.CONCURRENT)
     public void shouldGetWeatherInfoByCityFromCsvSourceTest(String city, String code, int id){
         given()
                 .spec(getWeatherInfoById(id)).

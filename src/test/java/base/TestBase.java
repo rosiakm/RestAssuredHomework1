@@ -9,12 +9,13 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
     private static YamlProvider yamlProvider;
-    @BeforeEach
-    public void setup(){
+
+    @BeforeAll
+    public static void setup(){
         yamlProvider = YamlProvider.getInstance();
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
     }
