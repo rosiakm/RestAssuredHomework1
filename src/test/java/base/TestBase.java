@@ -12,11 +12,10 @@ import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
-    private static YamlProvider yamlProvider;
 
     @BeforeAll
     public static void setup(){
-        yamlProvider = YamlProvider.getInstance();
+        YamlProvider yamlProvider = YamlProvider.getInstance();
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
     }
 
